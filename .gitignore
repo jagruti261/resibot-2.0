@@ -1,0 +1,9 @@
+cat > .gitignore <<EOF
+__pycache__/
+*.pyc
+.env
+venv/
+*.log
+.DS_Store
+EOFresibot-env/
+resibot-env/
