@@ -11,8 +11,6 @@ This prototype showcases:
 5. Confidence-based escalation
 6. Performance metrics and logging
 
-Requirements:
-pip install sentence-transformers torch numpy scikit-learn fastapi uvicorn python-multipart
 """
 
 import json
@@ -100,7 +98,7 @@ class MockAMISDatabase:
         self.cases = {
             "12345": CaseData(
                 case_id="12345",
-                name="Frau Sarah Müller",
+                name="Frau Müller",
                 status="Under Review",
                 eta="2024-03-15",
                 caseworker="mueller@lea-berlin.de",
@@ -111,10 +109,10 @@ class MockAMISDatabase:
             ),
             "67890": CaseData(
                 case_id="67890",
-                name="Mr. Ahmed Hassan",
+                name="Miss. Hana Ganz",
                 status="Approved",
                 eta="2024-02-28",
-                caseworker="schmidt@lea-berlin.de",
+                caseworker="hana1@lea-berlin.de",
                 submitted_docs=["passport_scan_front", "passport_scan_back", "Meldebescheinigung", 
                                "employment_contract", "criminal_record", "health_insurance"],
                 missing_docs=[],
@@ -229,7 +227,8 @@ class IntentClassifier:
                 "Status check please",
                 "Wo steht mein Verfahren?",
                 "Application status update",
-                "Wann wird mein Antrag bearbeitet?"
+                "Wann wird mein Antrag bearbeitet?",
+                "Updated Status"
             ],
             IntentType.DOCUMENT_CHECK: [
                 "What documents do I need?",
